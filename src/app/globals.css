@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --body-bg: #0F0F0F;
+  --foreground: #F9EFEC;
 }
 
 @theme inline {
@@ -14,13 +14,69 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --body-bg: #0F0F0F;
+    --foreground: #F9EFEC;
+    --primary: #1A1A1A;
+    --secondary: #CE7D63;
+    --grey: #676665;
+    --secondary-light: #DA9E8B;
+    --grey-dark: #B3B3B2;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-roboto-flex), sans-serif;
+}
+
+html {
+  font-size: 0.8333333333vw;
+}
+
+/* Font Scalablitiy  */
+@media (max-width:991px) {
+  html {
+    font-size: 1.3333334vw;
+  }
+}
+
+@media (max-width:600px) {
+  html {
+    font-size: 4.102564103vw;
   }
 }
 
 body {
-  background: var(--background);
+  background: var(--body-bg);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply pt-[1.875rem] pb-[3.125rem]
+}
+
+.myContainer {
+  @apply px-[3.125rem]
+}
+
+.sec-padded {
+  @apply py-[7.5rem]
+}
+
+.top-padded {
+  @apply pt-[7.5rem]
+}
+
+.bottom-padded {
+  @apply pb-[7.5rem]
+}
+
+/* Custom font classes */
+@layer utilities {
+  .font-primary {
+    font-family: var(--font-roboto-flex), sans-serif;
+  }
+
+  .font-secondary {
+    font-family: var(--font-roboto-mono), monospace;
+  }
 }
