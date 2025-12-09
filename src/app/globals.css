@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --body-bg: #0F0F0F;
+  --black: #0F0F0F;
   --foreground: #F9EFEC;
 }
 
@@ -14,21 +14,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --body-bg: #0F0F0F;
+    --black: #0F0F0F;
     --foreground: #F9EFEC;
     --primary: #1A1A1A;
     --secondary: #CE7D63;
     --grey: #676665;
     --secondary-light: #DA9E8B;
     --grey-dark: #B3B3B2;
+    --border: #1C1C21;
   }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--font-roboto-flex), sans-serif;
 }
 
 html {
@@ -49,8 +43,7 @@ html {
 }
 
 body {
-  background: var(--body-bg);
-  color: var(--foreground);
+  background: var(--black);
   @apply pt-[1.875rem] pb-[3.125rem]
 }
 
@@ -69,6 +62,42 @@ body {
 .bottom-padded {
   @apply pb-[7.5rem]
 }
+
+.f-center {
+  @apply flex items-center justify-center
+}
+
+.f-end {
+  @apply flex items-end
+}
+
+.f-start {
+  @apply flex items-start
+}
+
+.f-bw {
+  @apply flex items-center justify-between
+}
+
+.trns {
+  transition: all 0.4s ease-out;
+}
+
+p {
+  @apply text-lg leading-normal font-normal;
+  font-family: var(--font-roboto-flex), sans-serif;
+}
+
+h4 {
+  @apply font-medium text-[1.875rem] uppercase text-[#F9EFEC];
+  font-family: var(--font-roboto-flex), sans-serif;
+}
+
+h5 {
+  @apply text-[#F3DFD8] text-[1.375rem] font-bold;
+  font-family: var(--font-roboto-mono), sans-serif;
+}
+
 
 /* Custom font classes */
 @layer utilities {
