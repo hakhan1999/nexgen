@@ -88,6 +88,11 @@ p {
   font-family: var(--font-roboto-flex), sans-serif;
 }
 
+h1 {
+  @apply text-[4.5rem] text-[#F9EFEC] leading-23 font-semibold uppercase;
+  font-family: var(--font-roboto-flex), sans-serif;
+}
+
 h4 {
   @apply font-medium text-[1.875rem] uppercase text-[#F9EFEC];
   font-family: var(--font-roboto-flex), sans-serif;

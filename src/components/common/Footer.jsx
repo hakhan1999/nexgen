@@ -1,7 +1,7 @@
 import CTA from "./CTA";
 import SocialCard from "../cards/SocialCard";
 import Link from "next/link";
-import Marquee from "./InfiniteMarquee";
+import InfiniteMarquee from "./InfiniteMarquee";
 
 const Footer = () => {
   const social = [
@@ -65,7 +65,12 @@ const Footer = () => {
   return (
     <footer>
       <CTA />
-      <Marquee />
+      <InfiniteMarquee
+        texts={["Follow Us on Social Media"]}
+        repeat={20}
+        className="mt-5"
+      />
+
       <div className="grid grid-cols-5 grid-rows-6 gap-5 mt-5">
         {social.map((item, index) => (
           <div
