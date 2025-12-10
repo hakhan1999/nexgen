@@ -12,7 +12,7 @@ const InfiniteMarquee = ({ texts = [], repeat = 20, className }) => {
     >
       {items.map((text, i) => (
         <div key={i} className="flex items-center gap-5 pr-5">
-          <span className="text-xl uppercase text-[#676665] font-secondary whitespace-nowrap">
+          <span className="text-xl uppercase text-[#B3B3B2] font-secondary whitespace-nowrap">
             {text}
           </span>
           <div className="w-[7px] h-[7px] bg-[#CE7D63] rounded-full"></div>

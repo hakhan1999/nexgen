@@ -94,7 +94,7 @@ const Footer = () => {
               {home.map((item) => (
                 <li key={item.id}>
                   <Link
-                    className="text-[#81807E] font-primary text-lg leading-normal hover:text-[#CE7D63] trns"
+                    className="text-[#B3B3B2] font-primary text-lg leading-normal hover:text-[#CE7D63] trns"
                     href={item.link}
                   >
                     {item.text}
@@ -109,7 +109,7 @@ const Footer = () => {
               {services.map((item) => (
                 <li key={item.id}>
                   <Link
-                    className="text-[#81807E] font-primary text-lg leading-normal hover:text-[#CE7D63] trns"
+                    className="text-[#B3B3B2] font-primary text-lg leading-normal hover:text-[#CE7D63] trns"
                     href={item.link}
                   >
                     {item.text}
@@ -124,7 +124,7 @@ const Footer = () => {
               {projects.map((item) => (
                 <li key={item.id}>
                   <Link
-                    className="text-[#81807E] font-primary text-lg leading-normal hover:text-[#CE7D63] trns"
+                    className="text-[#B3B3B2] font-primary text-lg leading-normal hover:text-[#CE7D63] trns"
                     href={item.link}
                   >
                     {item.text}
@@ -139,7 +139,7 @@ const Footer = () => {
               {blogs.map((item) => (
                 <li key={item.id}>
                   <Link
-                    className="text-[#81807E] font-primary text-lg leading-normal hover:text-[#CE7D63] trns"
+                    className="text-[#B3B3B2] font-primary text-lg leading-normal hover:text-[#CE7D63] trns"
                     href={item.link}
                   >
                     {item.text}
@@ -151,14 +151,14 @@ const Footer = () => {
         </div>
         <div className="col-span-3 row-span-2 row-start-4 py-10 px-15 bg-[#1A1A1A] rounded-[0.875rem] f-bw">
           <div className="w-[50%]">
-            <p className="text-[#676665] font-secondary mb-2.5 uppercase">
+            <p className="text-[#B3B3B2] font-secondary mb-2.5 uppercase">
               Newsletter
             </p>
             <h4 className="mb-3">Subscribe To our Newsletter</h4>
           </div>
           <div className="w-[45%] flex items-end justify-end gap-5">
             <input
-              className="placeholder:text-lg placeholder:text-[#676665] placeholder:leading-normal placeholder:font-primary! text-[#F9EFEC] w-92 py-4.5 px-3 border-b border-[#333333]"
+              className="placeholder:text-lg placeholder:text-[#B3B3B2] placeholder:leading-normal placeholder:font-primary! text-[#F9EFEC] w-92 py-4.5 px-3 border-b border-[#333333]"
               type="text"
               name="email"
               id="newsletter"

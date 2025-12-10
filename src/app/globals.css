@@ -63,6 +63,10 @@ body {
   @apply pb-[7.5rem]
 }
 
+.inner-padded {
+  @apply p-5 border-2 border-[#1F1F1F] rounded-3xl;
+}
+
 .f-center {
   @apply flex items-center justify-center
 }
@@ -84,12 +88,22 @@ body {
 }
 
 p {
-  @apply text-lg leading-normal font-normal;
+  @apply text-lg leading-normal font-normal text-[#B3B3B2];
   font-family: var(--font-roboto-flex), sans-serif;
 }
 
 h1 {
   @apply text-[4.5rem] text-[#F9EFEC] leading-23 font-semibold uppercase;
+  font-family: var(--font-roboto-flex), sans-serif;
+}
+
+h2 {
+  @apply text-[3rem] text-[#F9EFEC] leading-23 font-semibold uppercase;
+  font-family: var(--font-roboto-flex), sans-serif;
+}
+
+h3 {
+  @apply text-[1.875rem] text-[#F9EFEC] font-medium uppercase;
   font-family: var(--font-roboto-flex), sans-serif;
 }
 

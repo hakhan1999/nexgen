@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="w-[70%] rounded-[1.25rem] bg-[#1A1A1A]">
         <div className="pt-25 myContainer">
           <div className="f-start gap-2">
-            <h1 className="mb-5 w-200">Our Comprehensive Digital Solutions</h1>
+            <h1 className="mb-5 w-190">Digital Solutions That Drive Success</h1>
             <Button
               link="#"
               text="Start a Project"
@@ -17,13 +17,11 @@ const Hero = () => {
               className="mt-[1.219rem]"
               isHero
             />
-            <Button />
           </div>
-          <p className="text-[#676665] mr-30">
-            At NexGen, we offer a comprehensive suite of digital solutions
-            designed to propel your business to new heights in the digital
-            realm. With a team of skilled professionals, cutting-edge
-            technologies, and a passion for innovation
+          <p className="text-[#B3B3B2] mr-30">
+            At NexGen, we believe in the transformative power of digital
+            solutions. Our team of experts is dedicated to helping businesses
+            like yours thrive in the fast-paced digital landscape.
           </p>
         </div>
         <div className="mx-5">
