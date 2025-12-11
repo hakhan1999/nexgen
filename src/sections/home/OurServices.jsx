@@ -42,7 +42,7 @@ const OurServices = () => {
     },
   ];
   return (
-    <section className="sec-padded">
+    <section className="top-padded">
       <div className="inner-padded">
         <SectionHeader title="Our Services" />
         <div className="f-bw">
