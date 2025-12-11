@@ -71,6 +71,8 @@ const Button = ({
       </button>
     );
   }
+
+  return null;
 };
 
 export default Button;

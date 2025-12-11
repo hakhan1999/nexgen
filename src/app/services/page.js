@@ -1,11 +1,10 @@
 "use client";
-import Hero from "@/sections/services/Hero";
-import OurServices from "@/sections/home/OurServices";
+import Hero from "@/sections/home/Hero";
 
 export default function Page() {
     return (
         <>
-            <Hero />
+            <Hero isServicesPage />
         </>
     );
 }
