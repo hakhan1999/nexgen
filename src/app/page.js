@@ -3,6 +3,7 @@ import Hero from "@/sections/home/Hero";
 import OurServices from "@/sections/home/OurServices";
 import Reasons from "@/sections/home/Reasons";
 import Testimonials from "@/sections/home/Testimonials";
+import Works from "@/sections/home/Works";
 
 export default function Page() {
   return (
@@ -10,6 +11,7 @@ export default function Page() {
       <Hero isHomePage />
       <Reasons />
       <OurServices />
+      <Works />
       <Testimonials />
     </>
   );

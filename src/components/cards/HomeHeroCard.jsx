@@ -12,7 +12,7 @@ const HomeHeroCard = ({ className }) => {
         <h4>Estatein Real Estate</h4>
         <p>Web Development</p>
       </div>
-      <div className="bg-[#0F0F0F] rounded-full f-center absolute -top-4 -right-[-2.6rem] w-[11.938rem] h-[11.938rem] ">
+      <div className="bg-[#0F0F0F] rounded-full f-center absolute -top-4 -right-[2.6rem] w-[11.938rem] h-[11.938rem] ">
         <div className="rounded-full bg-[#CE7D63] w-22 h-22 f-center trns group-hover:bg-white">
           <img
             className="w-[2.578rem] h-[2.578rem] trns filter-[brightness(0)_saturate(100%)_invert(1%)_sepia(14%)_saturate(4%)_hue-rotate(314deg)_brightness(124%)_contrast(91%)]"
@@ -21,7 +21,7 @@ const HomeHeroCard = ({ className }) => {
           />
         </div>
         <img
-          className="absolute top-8 left-6"
+          className="absolute top-8 left-2 w-[8.313rem] h-[8.313rem]"
           src="/assets/images/heroShape.svg"
           alt="Hero Shape"
         />

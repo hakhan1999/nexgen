@@ -55,6 +55,8 @@ const OurServices = () => {
                 iconLink={card.iconLink}
                 pricetext={card.pricetext}
                 title={card.title}
+                isServiceCard
+                btnText="Book a Call"
               />
             ))}
           </div>
