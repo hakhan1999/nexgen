@@ -1,7 +1,10 @@
+// layout.js
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
-import './globals.css'
+import './globals.css';
 import { Roboto_Mono, Roboto_Flex } from "next/font/google";
+import { LoadingProvider, LoadingContext } from "@/context/LoadingContext";
+import PreloaderWrapper from '@/components/loaders/PreloaderWrapper';
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
@@ -24,9 +27,13 @@ export default function RootLayout({ children }) {
   return (
     <html className={`${robotoMono.variable} ${robotoFlex.variable}`} lang="en">
       <body className='myContainer'>
-        <Header />
-        {children}
-        <Footer />
+        <LoadingProvider>
+          <PreloaderWrapper>
+            <Header />
+            {children}
+            <Footer />
+          </PreloaderWrapper>
+        </LoadingProvider>
       </body>
     </html>
   );
