@@ -1,3 +1,4 @@
+"use client";
 import Card from "@/components/cards/Card";
 import TechTeamCard from "@/components/cards/TechTeamCard";
 import SectionHeader from "@/components/common/SectionHeader";

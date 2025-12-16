@@ -1,3 +1,4 @@
+"use client";
 import FAQCard from "@/components/cards/FAQCard";
 import FormCard from "@/components/cards/FormCard";
 import SectionHeader from "@/components/common/SectionHeader";
