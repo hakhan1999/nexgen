@@ -5,7 +5,7 @@ import './globals.css';
 import { Roboto_Mono, Roboto_Flex } from "next/font/google";
 import { LoadingProvider } from "@/context/LoadingContext";
 import PreloaderWrapper from '@/components/loaders/PreloaderWrapper';
-import { getLogo, getMenu } from '@/lib/wpApi';
+import { getFooter, getLogo, getMenu } from '@/lib/wpApi';
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
@@ -27,6 +27,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   const logoData = await getLogo();
   const menuData = await getMenu("header-menu");
+  const footerData = await getFooter();
   return (
     <html className={`${robotoMono.variable} ${robotoFlex.variable}`} lang="en">
       <body className='myContainer'>
@@ -34,7 +35,7 @@ export default async function RootLayout({ children }) {
           <PreloaderWrapper>
             <Header logo={logoData?.logo} menu={menuData?.items} />
             {children}
-            <Footer />
+            <Footer data={footerData} />
           </PreloaderWrapper>
         </LoadingProvider>
       </body>

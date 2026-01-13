@@ -12,10 +12,10 @@ export default async function Page() {
     <>
       <Hero isHomePage data={homeData} />
       <Reasons data={homeData} />
-      <OurServices />
-      <Works />
-      <Testimonials />
-      <FAQ />
+      <OurServices data={homeData} />
+      <Works data={homeData} />
+      <Testimonials data={homeData} />
+      <FAQ data={homeData} />
     </>
   );
 }

@@ -2,85 +2,31 @@ import CTA from "./CTA";
 import SocialCard from "../cards/SocialCard";
 import Link from "next/link";
 import InfiniteMarquee from "./InfiniteMarquee";
+import { getFooter, getMenu } from "@/lib/wpApi";
 
-const Footer = () => {
-  const social = [
-    {
-      id: 1,
-      iconLink: "/assets/images/instagram.svg",
-      title: "Instagram",
-      description:
-        "Share visually appealing snippets of our latest web projects.",
-      link: "#",
-    },
-    {
-      id: 2,
-      iconLink: "/assets/images/twitter.svg",
-      title: "Twitter",
-      description: "Tweet about interesting coding challenges you've overcome.",
-      link: "#",
-    },
-    {
-      id: 3,
-      iconLink: "/assets/images/dribble.svg",
-      title: "Dribble",
-      description: "Showcase design elements of our web projects.",
-      link: "#",
-    },
-    {
-      id: 4,
-      iconLink: "/assets/images/behance.svg",
-      title: "Behance",
-      description: "Create detailed presentations for our projects.",
-      link: "#",
-    },
-  ];
+const Footer = async () => {
+  const [data, menus] = await Promise.all([getFooter(), getMenu()]);
 
-  const home = [
-    { id: 1, text: "Why Us", link: "#" },
-    { id: 2, text: "About Us", link: "#" },
-    { id: 3, text: "Testimonials", link: "#" },
-    { id: 4, text: "FAQs", link: "#" },
-  ];
-
-  const services = [
-    { id: 1, text: "Web Development", link: "#" },
-    { id: 2, text: "App Development", link: "#" },
-    { id: 3, text: "Web Design", link: "#" },
-    { id: 4, text: "Digital Marketing", link: "#" },
-  ];
-
-  const projects = [
-    { id: 1, text: "Klothink", link: "#" },
-    { id: 2, text: "Zenith", link: "#" },
-    { id: 3, text: "Novus", link: "#" },
-    { id: 4, text: "Apex", link: "#" },
-  ];
-
-  const blogs = [
-    { id: 1, text: "Business", link: "#" },
-    { id: 2, text: "Design", link: "#" },
-    { id: 3, text: "Development", link: "#" },
-  ];
+  if (!data) return null;
   return (
     <footer>
       <CTA />
       <InfiniteMarquee
-        texts={["Follow Us on Social Media"]}
+        texts={data.marquee_text_footer?.map((item) => item.text) || []}
         repeat={20}
         className="mt-5"
       />
 
       <div className="grid grid-cols-5 grid-rows-6 gap-5 mt-5">
-        {social.map((item, index) => (
+        {data?.social_boxes?.map((item, index) => (
           <div
-            key={item.id}
+            key={index}
             className={`row-span-3 ${
               index === 2 ? "col-start-1 row-start-4" : ""
             } ${index === 3 ? "row-span-3 col-start-2 row-start-4" : ""}`}
           >
             <SocialCard
-              iconLink={item.iconLink}
+              iconLink={item.icon}
               title={item.title}
               description={item.description}
               link={item.link}
@@ -89,60 +35,60 @@ const Footer = () => {
         ))}
         <div className="col-span-3 row-span-3 col-start-3 row-start-1 py-10 px-15 bg-[#1A1A1A] rounded-[0.875rem] grid grid-cols-4 gap-15">
           <div className="grid-item">
-            <h5 className="mb-7.5">Home</h5>
+            <h5 className="mb-7.5">{data?.menu_titles?.menu_1_title}</h5>
             <ul className="flex flex-col gap-4.5">
-              {home.map((item) => (
+              {menus?.footerMenu1?.map((item) => (
                 <li key={item.id}>
                   <Link
                     className="text-[#B3B3B2] font-primary text-lg leading-normal hover:text-[#CE7D63] trns"
-                    href={item.link}
+                    href={item.url}
                   >
-                    {item.text}
+                    {item.title}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
           <div className="grid-item">
-            <h5 className="mb-7.5">Services</h5>
+            <h5 className="mb-7.5">{data?.menu_titles?.menu_2_title}</h5>
             <ul className="flex flex-col gap-4.5">
-              {services.map((item) => (
+              {menus?.footerMenu2?.map((item) => (
                 <li key={item.id}>
                   <Link
                     className="text-[#B3B3B2] font-primary text-lg leading-normal hover:text-[#CE7D63] trns"
-                    href={item.link}
+                    href={item.url}
                   >
-                    {item.text}
+                    {item.title}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
           <div className="grid-item">
-            <h5 className="mb-7.5">Projects</h5>
+            <h5 className="mb-7.5">{data?.menu_titles?.menu_3_title}</h5>
             <ul className="flex flex-col gap-4.5">
-              {projects.map((item) => (
+              {menus?.footerMenu3?.map((item) => (
                 <li key={item.id}>
                   <Link
                     className="text-[#B3B3B2] font-primary text-lg leading-normal hover:text-[#CE7D63] trns"
-                    href={item.link}
+                    href={item.url}
                   >
-                    {item.text}
+                    {item.title}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
           <div className="grid-item">
-            <h5 className="mb-7.5">Blogs</h5>
+            <h5 className="mb-7.5">{data?.menu_titles?.menu_4_title}</h5>
             <ul className="flex flex-col gap-4.5">
-              {blogs.map((item) => (
+              {menus?.footerMenu4?.map((item) => (
                 <li key={item.id}>
                   <Link
                     className="text-[#B3B3B2] font-primary text-lg leading-normal hover:text-[#CE7D63] trns"
-                    href={item.link}
+                    href={item.url}
                   >
-                    {item.text}
+                    {item.title}
                   </Link>
                 </li>
               ))}
@@ -152,9 +98,9 @@ const Footer = () => {
         <div className="col-span-3 row-span-2 row-start-4 py-10 px-15 bg-[#1A1A1A] rounded-[0.875rem] f-bw">
           <div className="w-[50%]">
             <p className="text-[#B3B3B2] font-secondary mb-2.5 uppercase">
-              Newsletter
+              {data?.newsletter_section?.sub_title}
             </p>
-            <h4 className="mb-3">Subscribe To our Newsletter</h4>
+            <h4 className="mb-3">{data?.newsletter_section?.title}</h4>
           </div>
           <div className="w-[45%] flex items-end justify-end gap-5">
             <input
@@ -179,25 +125,19 @@ const Footer = () => {
         </div>
         <div className="col-span-3 col-start-3 row-start-6 py-10 px-15 bg-[#1A1A1A] rounded-[0.875rem] f-bw">
           <span className="text-[#B3B3B2] font-secondary text-lg">
-            © 2024 NextGen. All rights reserved.
+            {data?.copyright_text?.text}
           </span>
           <ul className="flex gap-8">
-            <li>
-              <Link
-                href="#"
-                className="text-[#B3B3B2] font-secondary text-lg hover:text-[#CE7D63] trns"
-              >
-                Terms & Conditions
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#"
-                className="text-[#B3B3B2] font-secondary text-lg hover:text-[#CE7D63] trns"
-              >
-                Privacy Policy
-              </Link>
-            </li>
+            {menus?.policyMenu?.map((item) => (
+              <li key={item.id}>
+                <Link
+                  href={item.url}
+                  className="text-[#B3B3B2] font-secondary text-lg hover:text-[#CE7D63] trns"
+                >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

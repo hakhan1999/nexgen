@@ -18,8 +18,11 @@ export async function fetchWP(endpoint) {
 // Logo API Fetch Endpoint 
 export const getLogo = () => fetchWP("/custom/v1/site-settings");
 
-// Menu API Fetch Endpoint 
-export const getMenu = (slug = "header-menu") => fetchWP(`/custom/v1/menu/${slug}`);
+// Menus API Fetch Endpoint 
+export const getMenu = () => fetchWP("/custom/v1/menus");
+
+// Footer API Fetch Endpoint 
+export const getFooter = () => fetchWP("/custom/v1/footer")
 
 // Home Page ACF Fields API Fetch Endpoint 
 export const getHomeData = () => fetchWP("/custom/v1/home");

@@ -21,11 +21,13 @@ const Header = () => {
       try {
         const [logoData, menuData] = await Promise.all([getLogo(), getMenu()]);
 
+        const menuItems = menuData?.["headerMenu"] || [];
+
         setLogo(logoData?.logo || null);
 
         // Transform menu data to fit navLinks format
         const links =
-          menuData?.map((item, index) => ({
+          menuItems?.map((item, index) => ({
             id: index + 1,
             text: item.title,
             link: item.url.replace(
