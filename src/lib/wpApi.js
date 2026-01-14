@@ -26,3 +26,6 @@ export const getFooter = () => fetchWP("/custom/v1/footer")
 
 // Home Page ACF Fields API Fetch Endpoint 
 export const getHomeData = () => fetchWP("/custom/v1/home");
+
+// Fetch Services Post Type API 
+export const getServices = () => fetchWP("/custom/v1/services");
